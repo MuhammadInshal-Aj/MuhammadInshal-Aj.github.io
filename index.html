@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Inshal | CS & Cybersecurity Portfolio</title>
+  <meta name="description" content="Professional portfolio of Muhammad Inshal, BS Computer Science student at NUTECH, Certified Ethical Hacker (CEH), and full-stack software engineer.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              indigo: '#2563EB',
+              violet: '#18181B',
+              slate: '#09090B',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Design System Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Premium overrides and custom layouts */
+    .text-accent-gradient { color: var(--accent); }
+    .badge-verified-container {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border);
+    }
+    
+    /* 3D Perspective Setup */
+    .perspective-container {
+      perspective: 1000px;
+    }
+    .tilt-card {
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+    .tilt-inner {
+      transform: translateZ(20px);
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Ambient background system -->
+  <div class="ambient-grid" aria-hidden="true"></div>
+
+  <!-- Header / Navigation -->
+  <nav class="navbar" id="main-nav">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#home" id="nav-brand" class="font-heading font-bold text-lg text-slate-800 dark:text-zinc-100 transition-colors duration-200 flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-brand-indigo"></span>
+        Muhammad Inshal
+      </a>
+      
+      <!-- Nav Links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#home" id="nav-home" class="nav-link active">Home</a>
+        <a href="#about" id="nav-about" class="nav-link">About</a>
+        <a href="#labs" id="nav-labs" class="nav-link">Labs</a>
+        <a href="#skills" id="nav-skills" class="nav-link">Skills</a>
+        <a href="#projects" id="nav-projects" class="nav-link">Projects</a>
+        <a href="#contact" id="nav-contact" class="nav-link">Contact</a>
+      </div>
+
+      <!-- Controls (Theme Toggle + Resume Download) -->
+      <div class="flex items-center gap-4">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+          <!-- Sun Icon (visible in dark mode) -->
+          <svg id="theme-icon-sun" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
+          <!-- Moon Icon (visible in light mode) -->
+          <svg id="theme-icon-moon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+
+        <!-- Resume Download -->
+        <a href="assets/Resume.pdf" id="nav-download-resume" download class="btn-primary text-xs py-2 px-4 flex items-center gap-1.5">
+          <span>Download CV</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======================== HERO SECTION ======================== -->
+  <section id="home" class="min-h-screen flex items-center px-6 pt-24 pb-16 perspective-container">
+    <div class="max-w-6xl mx-auto w-full grid md:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Content Column -->
+      <div class="md:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 flex-wrap">
+          <span class="badge-verified" id="hero-badge-student">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+            </svg>
+            Computer Science @ NUTECH
+          </span>
+          <span class="badge-verified" id="hero-badge-ceh">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            CEH Certified
+          </span>
+        </div>
+        
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-tight" style="color:var(--text); font-family:var(--font-heading);">
+          Muhammad Inshal
+        </h1>
+        
+        <!-- Role Typing Subtitle -->
+        <p class="text-xl md:text-2xl font-semibold text-accent-gradient" id="hero-subtitle">
+          BS CS Student & Cybersecurity Practitioner
+        </p>
+        
+        <p class="text-slate-600 dark:text-zinc-400 text-lg leading-relaxed max-w-xl">
+          Studying Computer Science at the National University of Technology, Islamabad. Specialized in security architectures, penetration testing, and full-stack software development.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#projects" id="hero-cta-work" class="btn-primary">
+            <span>View Deployed Projects</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+          <a href="#contact" id="hero-cta-contact" class="btn-secondary">
+            Get In Touch
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-5 max-w-2xl">
+          <div class="hero-stat">
+            <div class="text-2xl font-bold" style="color:var(--text);">CEH</div>
+            <div class="text-xs uppercase font-semibold text-slate-500 dark:text-zinc-400">Certified</div>
+          </div>
+          <div class="hero-stat">
+            <div class="text-2xl font-bold" style="color:var(--text);">2028</div>
+            <div class="text-xs uppercase font-semibold text-slate-500 dark:text-zinc-400">BS CS Track</div>
+          </div>
+          <div class="hero-stat">
+            <div class="text-2xl font-bold" style="color:var(--text);">Full Stack</div>
+            <div class="text-xs uppercase font-semibold text-slate-500 dark:text-zinc-400">Security Focus</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Graphic / Profile Photo Column (3D tilt ready) -->
+      <div class="md:col-span-5 flex justify-center">
+        <div class="w-72 h-72 md:w-80 md:h-80 profile-frame bg-zinc-200 dark:bg-zinc-800 tilt-card cursor-pointer" id="hero-profile-container">
+          <!-- Profile image with onerror fallback -->
+          <img src="assets/profile.jpg" alt="Muhammad Inshal" id="profile-img" class="w-full h-full object-cover tilt-inner" onerror="this.style.display='none'; document.getElementById('profile-fallback').classList.remove('hidden');">
+          
+          <!-- Monogram Fallback inside frame -->
+          <div id="profile-fallback" class="hidden absolute inset-0 flex flex-col items-center justify-center bg-zinc-950 text-white p-6 tilt-inner">
+            <span class="text-7xl font-bold font-heading tracking-widest">MI</span>
+            <span class="text-xs uppercase tracking-widest mt-4 font-medium opacity-85">Academic & Security Portfolio</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- ======================== ABOUT SECTION ======================== -->
+  <section id="about" class="py-24 px-6 section-alt">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left Column: Biography -->
+        <div class="md:col-span-6 space-y-6">
+          <div class="text-sm font-semibold uppercase tracking-wider text-accent" style="font-family:var(--font-heading);">Biography</div>
+          <h2 class="text-3xl font-bold tracking-tight" style="color:var(--text); font-family:var(--font-heading);">Academic & Professional Journey</h2>
+          
+          <p class="text-slate-600 dark:text-zinc-400 leading-relaxed">
+            I am a student currently studying for my Bachelor of Science in Computer Science (BS CS) at the National University of Technology (NUTECH) in Islamabad. Having completed my Intermediate in Computer Sciences (ICS) at Punjab College in 2023, I have built a solid foundation in computational thinking early on.
+          </p>
+          <p class="text-slate-600 dark:text-zinc-400 leading-relaxed">
+            Aiming to become a professional Penetration Tester, I bridge the gap between software development and information security. I hold the Certified Ethical Hacker (CEH) certification from EC-Council, demonstrating my proficiency in scanning networks, systems exploitation, and threat assessment.
+          </p>
+        </div>
+
+        <!-- Right Column: Timeline log -->
+        <div class="md:col-span-6 space-y-6">
+          <div class="text-sm font-semibold uppercase tracking-wider text-accent" style="font-family:var(--font-heading);">Timeline</div>
+          
+          <div class="space-y-4">
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item">
+              <span class="text-xs font-semibold text-accent">September 2024 - August 2028 (Expected)</span>
+              <h3 class="text-lg font-bold mt-1" style="color:var(--text); font-family:var(--font-heading);">Bachelor of Science in Computer Science</h3>
+              <p class="text-xs text-slate-400">National University of Technology (NUTECH), Islamabad</p>
+              <p class="text-sm text-slate-500 dark:text-zinc-400 mt-2">Core study: Algorithms, Data Structures, Relational Database Systems, Operating Systems, Software Engineering methodologies.</p>
+            </div>
+            
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item">
+              <span class="text-xs font-semibold text-green-600 dark:text-green-400">Verified Credential</span>
+              <h3 class="text-lg font-bold mt-1" style="color:var(--text); font-family:var(--font-heading);">Certified Ethical Hacker (CEH)</h3>
+              <p class="text-xs text-slate-400">EC-Council</p>
+              <p class="text-sm text-slate-500 dark:text-zinc-400 mt-2">Focused on offensive security vectors, perimeter scanning, system intrusion tactics, web application vulnerability indexing, and network-level security controls.</p>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item">
+              <span class="text-xs font-semibold text-slate-400">2023</span>
+              <h3 class="text-lg font-bold mt-1" style="color:var(--text); font-family:var(--font-heading);">Intermediate in Computer Sciences (ICS)</h3>
+              <p class="text-xs text-slate-400">Punjab College, Islamabad</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== ENGINEERING LABS SECTION ======================== -->
+  <section id="labs" class="py-24 px-6 perspective-container">
+    <div class="max-w-6xl mx-auto space-y-12">
+      <div class="text-center max-w-2xl mx-auto space-y-4">
+        <div class="text-sm font-semibold uppercase tracking-wider text-accent" style="font-family:var(--font-heading);">Engineering & Security Labs</div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight" style="color:var(--text); font-family:var(--font-heading);">System Architectures & Case Studies</h2>
+        <p class="text-slate-500 dark:text-zinc-400">
+          Detailed technical reviews of specialized lab environments built to practice developer operations and system exploitation.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Lab Case 1: Sentinel LMS -->
+        <div class="corporate-card space-y-6 tilt-card" data-tilt>
+          <div class="flex justify-between items-center border-b border-zinc-200/60 dark:border-zinc-800/60 pb-4 tilt-inner">
+            <h3 class="text-xl font-bold" style="color:var(--text); font-family:var(--font-heading);">Sentinel LMS Architecture</h3>
+            <span class="px-2.5 py-1 text-xs font-semibold text-indigo-600 bg-indigo-50 dark:bg-indigo-900/20 dark:text-indigo-400 rounded">Full-Stack Development</span>
+          </div>
+          
+          <p class="text-slate-600 dark:text-zinc-400 text-sm leading-relaxed tilt-inner">
+            Sentinel LMS is a security-oriented educational learning platform built using an Agile sprint lifecycle. Architected with a clean modular separation between the client frontend and backend REST service.
+          </p>
+
+          <div class="space-y-3 font-mono text-xs text-slate-500 dark:text-zinc-400 bg-zinc-50 dark:bg-zinc-900/50 p-4 rounded-lg border border-zinc-200/50 dark:border-zinc-800/50 tilt-inner">
+            <div class="font-semibold text-slate-700 dark:text-zinc-300">CORE ARCHITECTURE INDEX:</div>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Backend Node.js & Express REST Router</li>
+              <li>Supabase Auth Session Controls</li>
+              <li>PostgreSQL Relational Schema Design</li>
+              <li>XP Gamification Tracking & Dashboard Metrics</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Lab Case 2: Sentinel CLI vulnerable OS -->
+        <div class="corporate-card space-y-6 tilt-card" data-tilt>
+          <div class="flex justify-between items-center border-b border-zinc-200/60 dark:border-zinc-800/60 pb-4 tilt-inner">
+            <h3 class="text-xl font-bold" style="color:var(--text); font-family:var(--font-heading);">Sentinel CLI Vulnerable OS</h3>
+            <span class="px-2.5 py-1 text-xs font-semibold text-red-600 bg-red-50 dark:bg-red-900/20 dark:text-red-400 rounded">Security Engineering</span>
+          </div>
+          
+          <p class="text-slate-600 dark:text-zinc-400 text-sm leading-relaxed tilt-inner">
+            A standalone Linux-based vulnerable target machine designed to train security researchers. It exposes a chained system vulnerability path leading to administrative shell access.
+          </p>
+
+          <div class="space-y-3 font-mono text-xs text-slate-500 dark:text-zinc-400 bg-zinc-50 dark:bg-zinc-900/50 p-4 rounded-lg border border-zinc-200/50 dark:border-zinc-800/50 tilt-inner">
+            <div class="font-semibold text-slate-700 dark:text-zinc-300">SECURITY MECHANISMS:</div>
+            <ul class="list-disc list-inside space-y-1">
+              <li>Decoy Honey-pots & Priv-Esc Rabbit Holes</li>
+              <li>Stealthy Intrusion Detection Monitoring Script</li>
+              <li>Methodical Activity Logging and Intruder Blocking</li>
+              <li>Simulated Real-World Attack Surface Vectors</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== TECHNICAL SKILLS SECTION ======================== -->
+  <section id="skills" class="py-24 px-6 section-alt">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Side: Copy -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="text-sm font-semibold uppercase tracking-wider text-accent" style="font-family:var(--font-heading);">Expertise</div>
+          <h2 class="text-3xl font-bold tracking-tight" style="color:var(--text); font-family:var(--font-heading);">Technical Proficiency</h2>
+          <p class="text-slate-500 dark:text-zinc-400 leading-relaxed">
+            My skillset spans offensive penetration testing tools, shell automation scripting, and responsive full-stack software development methodologies.
+          </p>
+        </div>
+
+        <!-- Right Side: Metrics List -->
+        <div class="md:col-span-7 space-y-6">
+          
+          <!-- Skill Bar 1 -->
+          <div>
+            <div class="flex justify-between text-sm font-medium text-slate-700 dark:text-zinc-300">
+              <span>Penetration Testing Tools (NMAP, Metasploit, Shodan)</span>
+              <span>90%</span>
+            </div>
+            <div class="progress-container"><div class="progress-fill" data-width="90%" id="bar-tools"></div></div>
+          </div>
+
+          <!-- Skill Bar 2 -->
+          <div>
+            <div class="flex justify-between text-sm font-medium text-slate-700 dark:text-zinc-300">
+              <span>Host Enumeration & OSINT Analysis</span>
+              <span>85%</span>
+            </div>
+            <div class="progress-container"><div class="progress-fill" data-width="85%" id="bar-osint"></div></div>
+          </div>
+
+          <!-- Skill Bar 3 -->
+          <div>
+            <div class="flex justify-between text-sm font-medium text-slate-700 dark:text-zinc-300">
+              <span>HTML5 / CSS3 / JavaScript Full Stack frontend</span>
+              <span>85%</span>
+            </div>
+            <div class="progress-container"><div class="progress-fill" data-width="85%" id="bar-html"></div></div>
+          </div>
+
+          <!-- Skill Bar 4 -->
+          <div>
+            <div class="flex justify-between text-sm font-medium text-slate-700 dark:text-zinc-300">
+              <span>Node.js / Express.js REST API servers</span>
+              <span>80%</span>
+            </div>
+            <div class="progress-container"><div class="progress-fill" data-width="80%" id="bar-node"></div></div>
+          </div>
+
+          <!-- Skill Bar 5 -->
+          <div>
+            <div class="flex justify-between text-sm font-medium text-slate-700 dark:text-zinc-300">
+              <span>Linux Systems / Bash & Python Scripting</span>
+              <span>80%</span>
+            </div>
+            <div class="progress-container"><div class="progress-fill" data-width="80%" id="bar-linux"></div></div>
+          </div>
+
+          <!-- Skill Bar 6 -->
+          <div>
+            <div class="flex justify-between text-sm font-medium text-slate-700 dark:text-zinc-300">
+              <span>Relational Schema Design (PostgreSQL / Supabase)</span>
+              <span>75%</span>
+            </div>
+            <div class="progress-container"><div class="progress-fill" data-width="75%" id="bar-postgres"></div></div>
+          </div>
+
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PROJECTS SHOWCASE ======================== -->
+  <section id="projects" class="py-24 px-6 perspective-container">
+    <div class="max-w-6xl mx-auto space-y-12">
+      
+      <!-- Section header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div class="space-y-3">
+          <div class="text-sm font-semibold uppercase tracking-wider text-accent" style="font-family:var(--font-heading);">Deployments</div>
+          <h2 class="text-3xl font-bold tracking-tight" style="color:var(--text); font-family:var(--font-heading);">Software & Security Projects</h2>
+        </div>
+        
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-2 border border-zinc-200 dark:border-zinc-800 p-1.5 rounded-full bg-zinc-50 dark:bg-zinc-900/50 max-w-max">
+          <button class="filter-btn active" id="filter-all">All Projects</button>
+          <button class="filter-btn" id="filter-sec">Offensive Security</button>
+          <button class="filter-btn" id="filter-dev">Software Engineering</button>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid md:grid-cols-2 gap-8" id="projects-grid">
+        
+        <!-- Project 1: Sentinel LMS -->
+        <div class="corporate-card flex flex-col justify-between h-full space-y-6 tilt-card" data-category="dev" data-tilt>
+          <div class="space-y-4 tilt-inner">
+            <div class="flex justify-between items-center text-xs font-semibold text-indigo-600 dark:text-indigo-400">
+              <span>SOFTWARE DEPLOYMENT</span>
+              <span class="text-slate-400 font-normal">2024-2025</span>
+            </div>
+            <h3 class="text-2xl font-bold" style="color:var(--text); font-family:var(--font-heading);">Sentinel LMS</h3>
+            <p class="text-slate-500 dark:text-zinc-400 text-sm leading-relaxed">
+              A full-stack, security-oriented educational learning platform engineered for university coursework using Agile sprints. Enabled student accounts to log in, register, track learning metrics, and achieve levels by completing mock cybersecurity training modules.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2 text-xs font-mono text-slate-500">
+              <span class="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">Node.js / Express</span>
+              <span class="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">Supabase Auth</span>
+              <span class="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">PostgreSQL</span>
+              <span class="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">Vanilla JS</span>
+            </div>
+          </div>
+          <div class="border-t border-zinc-100 dark:border-zinc-800 pt-4 flex justify-between items-center text-sm tilt-inner">
+            <a href="https://github.com/muhammad-inshal-13b746282" target="_blank" class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline flex items-center gap-1">
+              Source Repository
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2: Sentinel CLI Machine -->
+        <div class="corporate-card flex flex-col justify-between h-full space-y-6 tilt-card" data-category="sec" data-tilt>
+          <div class="space-y-4 tilt-inner">
+            <div class="flex justify-between items-center text-xs font-semibold text-red-600 dark:text-red-400">
+              <span>OFFENSIVE SECURITY LAB</span>
+              <span class="text-slate-400 font-normal">2024</span>
+            </div>
+            <h3 class="text-2xl font-bold" style="color:var(--text); font-family:var(--font-heading);">Sentinel Custom CLI Machine</h3>
+            <p class="text-slate-500 dark:text-zinc-400 text-sm leading-relaxed">
+              Created a custom Linux-based vulnerable machine. Includes multiple decoy honeypots and rabbit holes to teach penetration testers stealth and OPSEC disciplines. Integrates a real-time active IDS system script to isolate attackers.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2 text-xs font-mono text-slate-500">
+              <span class="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">Linux Server</span>
+              <span class="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">Bash Shell Scripting</span>
+              <span class="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">Hardening</span>
+              <span class="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">IDS Logging</span>
+            </div>
+          </div>
+          <div class="border-t border-zinc-100 dark:border-zinc-800 pt-4 flex justify-between items-center text-sm text-slate-400 tilt-inner">
+            <span>Verified System Hardened</span>
+          </div>
+        </div>
+
+        <!-- Project 3: HTB Machine Challenges -->
+        <div class="corporate-card flex flex-col justify-between h-full space-y-6 tilt-card" data-category="sec" data-tilt>
+          <div class="space-y-4 tilt-inner">
+            <div class="flex justify-between items-center text-xs font-semibold text-red-600 dark:text-red-400">
+              <span>PENETRATION TESTING</span>
+              <span class="text-slate-400 font-normal">Ongoing</span>
+            </div>
+            <h3 class="text-2xl font-bold" style="color:var(--text); font-family:var(--font-heading);">HackTheBox Target Exploitations</h3>
+            <p class="text-slate-500 dark:text-zinc-400 text-sm leading-relaxed">
+              Consistently practicing offensive security on the HackTheBox platform. Testing system access, OSINT mapping, web applications attacks, port enumeration, SSH hijacking, service exploit scripting, and capturing targets root flags.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2 text-xs font-mono text-slate-500">
+              <span class="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">OSINT</span>
+              <span class="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">Exploits</span>
+              <span class="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">NMAP Scan</span>
+              <span class="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">Priv Esc</span>
+            </div>
+          </div>
+          <div class="border-t border-zinc-100 dark:border-zinc-800 pt-4 flex justify-between items-center text-sm tilt-inner">
+            <a href="https://linkedin.com/in/muhammad-inshal-13b746282" target="_blank" class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline flex items-center gap-1">
+              LinkedIn Achievements
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4: Java GUI Database -->
+        <div class="corporate-card flex flex-col justify-between h-full space-y-6 tilt-card" data-category="dev" data-tilt>
+          <div class="space-y-4 tilt-inner">
+            <div class="flex justify-between items-center text-xs font-semibold text-indigo-600 dark:text-indigo-400">
+              <span>ACADEMIC COURSE PROJECT</span>
+              <span class="text-slate-400 font-normal">2024</span>
+            </div>
+            <h3 class="text-2xl font-bold" style="color:var(--text); font-family:var(--font-heading);">Swing Academic Database System</h3>
+            <p class="text-slate-500 dark:text-zinc-400 text-sm leading-relaxed">
+              Developed a Java GUI application designed to manage student and course rosters. Interfaced client Swing graphics with a local relational SQL database schema enabling filters, record registers, and details search.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2 text-xs font-mono text-slate-500">
+              <span class="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">Java Standard</span>
+              <span class="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">Swing GUI</span>
+              <span class="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">SQL JDBC</span>
+              <span class="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">Database Design</span>
+            </div>
+          </div>
+          <div class="border-t border-zinc-100 dark:border-zinc-800 pt-4 flex justify-between items-center text-sm text-slate-400 tilt-inner">
+            <span>Coursework Score: A</span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CONTACT SECTION ======================== -->
+  <section id="contact" class="py-24 px-6 section-alt">
+    <div class="max-w-4xl mx-auto space-y-12">
+      <div class="text-center space-y-3">
+        <div class="text-sm font-semibold uppercase tracking-wider text-accent" style="font-family:var(--font-heading);">Contact</div>
+        <h2 class="text-3xl font-bold tracking-tight" style="color:var(--text); font-family:var(--font-heading);">Initiate Communication</h2>
+        <p class="text-slate-500 dark:text-zinc-400 text-sm max-w-md mx-auto">
+          Please fill out the form below to send an email inquiry directly to my inbox.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-12 gap-8">
+        
+        <!-- Left Side Details -->
+        <div class="md:col-span-4 space-y-6" style="font-family:var(--font-heading);">
+          <div class="space-y-1">
+            <div class="text-xs uppercase text-slate-400 font-semibold">Primary Mail</div>
+            <a href="mailto:f24605042@nutech.edu.pk" id="contact-detail-email" class="text-sm font-bold text-slate-800 dark:text-zinc-200 hover:text-indigo-600 dark:hover:text-indigo-400 block transition-colors duration-200">
+              f24605042@nutech.edu.pk
+            </a>
+          </div>
+          
+          <div class="space-y-1">
+            <div class="text-xs uppercase text-slate-400 font-semibold">LinkedIn Profile</div>
+            <a href="https://linkedin.com/in/muhammad-inshal-13b746282" id="contact-detail-linkedin" target="_blank" class="text-sm font-bold text-slate-800 dark:text-zinc-200 hover:text-indigo-600 dark:hover:text-indigo-400 block transition-colors duration-200">
+              in/muhammad-inshal-13b746282
+            </a>
+          </div>
+
+          <div class="space-y-1">
+            <div class="text-xs uppercase text-slate-400 font-semibold">GitHub Source</div>
+            <a href="https://github.com/muhammad-inshal-13b746282" id="contact-detail-github" target="_blank" class="text-sm font-bold text-slate-800 dark:text-zinc-200 hover:text-indigo-600 dark:hover:text-indigo-400 block transition-colors duration-200">
+              github/muhammad-inshal-13b746282
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Side Form -->
+        <form id="contact-form" class="md:col-span-8 space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="form-name" class="block text-xs font-semibold text-slate-500 uppercase mb-1.5">Name</label>
+              <input type="text" id="form-name" required class="corporate-input" placeholder="Your Name">
+            </div>
+            <div>
+              <label for="form-email" class="block text-xs font-semibold text-slate-500 uppercase mb-1.5">Email</label>
+              <input type="email" id="form-email" required class="corporate-input" placeholder="you@example.com">
+            </div>
+          </div>
+          
+          <div>
+            <label for="form-subject" class="block text-xs font-semibold text-slate-500 uppercase mb-1.5">Subject</label>
+            <input type="text" id="form-subject" required class="corporate-input" placeholder="Project Inquiry / Hiring">
+          </div>
+
+          <div>
+            <label for="form-message" class="block text-xs font-semibold text-slate-500 uppercase mb-1.5">Message</label>
+            <textarea id="form-message" rows="5" required class="corporate-input resize-none" placeholder="Write your message here..."></textarea>
+          </div>
+
+          <div id="form-feedback" class="hidden text-sm p-3.5 rounded border"></div>
+
+          <button type="submit" id="form-submit-btn" class="w-full btn-primary py-3 justify-center">
+            <span>Send Message</span>
+          </button>
+        </form>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 px-6 border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-sm text-slate-400 font-heading">
+        &copy; 2026 Muhammad Inshal. BS CS student portfolio.
+      </div>
+      
+      <div class="flex gap-6 text-sm text-slate-400">
+        <a href="#home" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">Home</a>
+        <a href="#about" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">About</a>
+        <a href="#labs" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">Labs</a>
+        <a href="#projects" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">Projects</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Corporate Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
